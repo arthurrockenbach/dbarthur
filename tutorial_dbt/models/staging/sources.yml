@@ -1,0 +1,28 @@
+version: 2
+
+sources:
+  - name: northwind_etl
+    description: This is a replica of the Postgres database used by our Client
+    tables:
+      - name: orders
+        description: >
+          One record per order. Includes cancelled and deleted orders.
+        columns:
+          - name: order_id
+            description: Primary key of the orders table
+            tests:
+              - unique
+              - not_null
+
+      - name: products
+        description: This table contains infos about the products
+      - name: shippers
+        description: This table contains infos about the shippers 
+      - name: employees
+        description: This table contains infos about the employees
+      - name: customers
+        description: This table contains infos about the customers 
+      - name: suppliers
+        description: This table contains infos about the suppliers
+      - name: order_details
+        description: This table contains infos about the suppliers
